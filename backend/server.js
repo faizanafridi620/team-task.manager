@@ -1,11 +1,17 @@
 import express from "express"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
+import cors from "cors";
 
 dotenv.config();
 const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({
+    origin: [
+        "https://team-taskmanager-production-39f8.up.railway.app/"
+    ]
+}))
 
 import authRoutes from "./routes/authRoutes.js";
 import projectRoute from "./routes/projectsRoutes.js";
