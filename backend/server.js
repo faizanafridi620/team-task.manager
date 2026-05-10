@@ -10,7 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
     origin: [
         "https://team-taskmanager-production-39f8.up.railway.app/"
-    ]
+    ],
+    credentials: true
 }))
 
 import authRoutes from "./routes/authRoutes.js";
