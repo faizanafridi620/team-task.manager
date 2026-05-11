@@ -125,8 +125,12 @@ function DashBoard() {
 
   if (loading)
     return (
-      <div className="flex justify-center items-center h-screen text-xl">
-        Loading Dashboard...
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
+        <div className="bg-white px-8 py-6 rounded-xl shadow-lg">
+          <p className="text-xl font-semibold text-indigo-600 animate-pulse">
+            Loading Dashboard...
+          </p>
+        </div>
       </div>
     );
 
@@ -154,6 +158,11 @@ function DashBoard() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
+        {project.length === 0 && (
+   <div className="bg-white p-6 rounded-xl text-center">
+      No Projects Created
+   </div>
+)}
         {project.map((p) => (
           <div
             key={p._id}
@@ -164,8 +173,8 @@ function DashBoard() {
             <button
               onClick={() => {
                 setSelectProject(p);
-                fetchDashBoard(p._id);
-                fetchTasks(p._id);
+                // fetchDashBoard(p._id);
+                // fetchTasks(p._id);
               }}
               className="mt-4 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition cursor-pointer"
             >
