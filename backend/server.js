@@ -11,7 +11,7 @@ app.use(cors({
     origin: [
         "http://localhost:5173",
         "https://team-taskmanager-production-39f8.up.railway.app",
-        "https://team-task-manager-omega-nine.vercel.app/"
+        "https://team-task-manager-omega-nine.vercel.app"
     ],
     credentials: true
 }))
